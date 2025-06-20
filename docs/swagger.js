@@ -10,7 +10,16 @@ const options = {
     },
     servers: [
       { url: 'http://localhost:3000/api/v1', description: 'Dev server' }
-    ]
+    ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT'
+        }
+      }
+    }
   },
   apis: ['./routes/*.js']   // todos los archivos de rutas
 };
