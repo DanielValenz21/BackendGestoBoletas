@@ -8,6 +8,7 @@ const authRoutes = require('./routes/auth');
 const roleRoutes  = require('./routes/roles');
 const userRoutes  = require('./routes/users');
 const boletaRoutes = require('./routes/boletas');
+const dashRoutes = require('./routes/dashboard');
 
 const swaggerUi  = require('swagger-ui-express');
 const swaggerSpec = require('./docs/swagger');
@@ -22,6 +23,7 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/roles', roleRoutes);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/boletas', boletaRoutes);
+app.use('/api/v1/dashboard', dashRoutes);
 
 // 404
 app.use((req, res) => res.status(404).json({ message: 'Not found' }));
