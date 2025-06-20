@@ -7,6 +7,7 @@ const { port }  = require('./config/config');
 const authRoutes = require('./routes/auth');
 const roleRoutes  = require('./routes/roles');
 const userRoutes  = require('./routes/users');
+const boletaRoutes = require('./routes/boletas');
 
 const swaggerUi  = require('swagger-ui-express');
 const swaggerSpec = require('./docs/swagger');
@@ -20,6 +21,7 @@ app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/roles', roleRoutes);
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/boletas', boletaRoutes);
 
 // 404
 app.use((req, res) => res.status(404).json({ message: 'Not found' }));
